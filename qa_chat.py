@@ -43,7 +43,7 @@ def load_llm():
                     num_beams=5,
                     no_repeat_ngram_size=4,
                     early_stopping=True,
-                    max_new_tokens=100,
+                    max_new_tokens=50,
                 )
     
     llm = HuggingFacePipeline(pipeline=pipe)
@@ -94,18 +94,19 @@ def process_file(files):
     vectorstore_db = FAISS.from_documents(splits, embeddings)
 
     #create a custom prompt
-    custom_prompt_template = """Use the following pieces of information to answer the user's question at the end.
+    custom_prompt_template = """Given the uploaded files, generate a pecise answer to the question asked by the user.
     If you don't know the answer, just say that you don't know, don't try to make up an answer.
     Context= {context}
     History = {history}
     Question= {question}
-    Helpful Result:
+    Helpful Answer:
     """
     prompt = PromptTemplate(template=custom_prompt_template, input_variables=["question", "context", "history"])
     
 
     # set QA chain with memory
-    qa_chain_with_memory = RetrievalQA.from_chain_type(llm=load_llm(), chain_type='stuff',
+    qa_chain_with_memory = RetrievalQA.from_chain_type(llm=load_llm(),
+                                                       chain_type='stuff',
                                                        return_source_documents=True,
                                                        retriever=vectorstore_db.as_retriever(),
                                                        chain_type_kwargs={"verbose": True,
