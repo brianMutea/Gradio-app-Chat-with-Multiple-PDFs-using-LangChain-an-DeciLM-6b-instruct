@@ -13,3 +13,4 @@ faiss-cpu
 bitsandbytes 
 pypdf 
 typing-extensions
+PyPDF2
