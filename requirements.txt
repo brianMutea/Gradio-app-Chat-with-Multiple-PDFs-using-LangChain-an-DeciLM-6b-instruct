@@ -1,0 +1,15 @@
+langchain 
+transformers 
+accelerate 
+tiktoken 
+openai 
+gradio 
+torch 
+accelerate
+safetensors 
+sentence-transformers 
+faiss-gpu 
+faiss-cpu
+bitsandbytes 
+pypdf 
+typing-extensions
