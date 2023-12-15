@@ -2,6 +2,10 @@
 
 ![gif](<https://github.com/brianMutea/Gradio-app-Chat-with-Multiple-PDFs-using-LangChain-an-DeciLM-6b-instruct/blob/main/chatbot%20(2).gif>)
 
+Clone this repo
+
+Then:
+
 ### Install the required packages:
 
 `pip install -r requirements.txt`
