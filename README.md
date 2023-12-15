@@ -2,9 +2,7 @@
 
 ![gif](<https://github.com/brianMutea/Gradio-app-Chat-with-Multiple-PDFs-using-LangChain-an-DeciLM-6b-instruct/blob/main/chatbot%20(2).gif>)
 
-Clone this repo
-
-Then:
+Clone this repo and create a Virtual environment. cd into the virtual env and:
 
 ### Install the required packages:
 
